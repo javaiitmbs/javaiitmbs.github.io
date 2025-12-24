@@ -4,15 +4,15 @@
 <span style="display:flex; justify-content: space-between;">
 	<a href="../index.html">Home</a>   <a href="../week-2/summary.html">Week-2</a>    <a href="../week-4/summary.html">Week-4</a>    
 </span> 
-<hr> 
+<hr>
 
 # Java - Week 3
 
 [Toc]
 
-## Philosophy of Structured programming and Object oriented programming 
+## Philosophy of Structured programming and Object oriented programming
 
-Structured programming consists of designing a set of procedures (or algorithms) to solve a problem. Once the procedures are determined, the next step was to find appropriate ways to store the data. 
+Structured programming consists of designing a set of procedures (or algorithms) to solve a problem. Once the procedures are determined, the next step was to find appropriate ways to store the data.
 
 Object-oriented programming, or OOP for short, is the dominant programming paradigm. An object-oriented program is made of objects. Each object has a specific functionality, exposed to its users, and a hidden implementation. OOP reverses the order: puts the data first, then looks at the algorithms to operate on the data. For small problems, the breakdown into procedures works very well. But objects are more appropriate for larger problems.
 
@@ -22,23 +22,23 @@ Object oriented programming design
 
 Structured programming start with the main function. OOP often wonder where to begin,the answer is identify classes and then add methods to each class.
 
-For example, in an order-processing system, some of the nouns are 
+For example, in an order-processing system, some of the nouns are
 
-- Item 
-- Order 
-- Shipping address 
-- Payment 
+- Item
+- Order
+- Shipping address
+- Payment
 - Account
 
- These nouns signify the classes Item, Order, and so on.
+These nouns signify the classes Item, Order, and so on.
 
 Some of the verbs are
 
-- Items are *added* to orders
-- Orders are *shipped* or *canceled*
-- Payments are *applied* to orders
+- Items are _added_ to orders
+- Orders are _shipped_ or _canceled_
+- Payments are _applied_ to orders
 
-Verbs denote methods that operate on objects, ```add``` should be the method of ```Order``` class that takes an ```Item``` object as parameter
+Verbs denote methods that operate on objects, `add` should be the method of `Order` class that takes an `Item` object as parameter
 
 The key characteristics of objects are:
 
@@ -48,15 +48,15 @@ The key characteristics of objects are:
 
 - Identity — distinguish between different objects of the same class
 
-All objects that are instances of the same class share a family resemblance by supporting the same behavior. State is the information in the instance variables,  an object’s state may change over time, it must be a consequence of method calls. Each object has a distinct identity. For example, in an order processing system, two orders are distinct even if they request identical items.
+All objects that are instances of the same class share a family resemblance by supporting the same behavior. State is the information in the instance variables, an object’s state may change over time, it must be a consequence of method calls. Each object has a distinct identity. For example, in an order processing system, two orders are distinct even if they request identical items.
 
 ## Relationship between classes
 
-Dependence ("uses-a") —  a class depends on another class if its methods use or manipulate objects of that class. For example, the ```Order``` class uses the ```Account``` class because ```Order``` objects need to access ```Account``` objects to check for credit status. But the ```Item``` class does not depend on the ```Account``` class, because Item objects never need to worry about customer accounts. 
+Dependence ("uses-a") — a class depends on another class if its methods use or manipulate objects of that class. For example, the `Order` class uses the `Account` class because `Order` objects need to access `Account` objects to check for credit status. But the `Item` class does not depend on the `Account` class, because Item objects never need to worry about customer accounts.
 
 Aggregation ("has-a") — an Order object contains Item objects. Containment means that objects of class A contain objects of class B.
 
-inheritance ("is-a") —  a relationship between a more special and a more general class.
+inheritance ("is-a") — a relationship between a more special and a more general class.
 
 ## Inheritance and Subclass
 
@@ -85,7 +85,7 @@ public class Employee{
         return name;
     }
 	public double getSalary(){
-        return salary; 
+        return salary;
     }
 	// other methods
 	public double bonus(float percent){
@@ -125,7 +125,7 @@ The constructors for Manager can make use of parent class’s constructor using 
 Every Manager is an Employee, but not vice versa! We can use a subclass in place of a superclass.
 
 ```java
-Employee e = new Manager(...) //This is correct 
+Employee e = new Manager(...) //This is correct
 //But the following will not work
 Manager m = new Employee(...) //This is not correct
 ```
@@ -233,15 +233,15 @@ Let's understand these concepts with the help of an example
 
 The following classes allows certain operations
 
-- ```queue``` - insert_rear, delete_front
-- ```stack``` - insert_front, delete_front
-- ```deque``` - insert_front, delete_front, insert_rear, delete_rear
+- `queue` - insert_rear, delete_front
+- `stack` - insert_front, delete_front
+- `deque` - insert_front, delete_front, insert_rear, delete_rear
 
-Here, ```deque``` has more functionality than ```stack``` or ```queue```, therefore ```deque``` is a subtype of both ```stack``` and ```queue```. 
+Here, `deque` has more functionality than `stack` or `queue`, therefore `deque` is a subtype of both `stack` and `queue`.
 
-Wherever there is a need of ```stack``` or ```queue```, we can use a ```deque``` instead, since it can perform all the operations from the other two.
+Wherever there is a need of `stack` or `queue`, we can use a `deque` instead, since it can perform all the operations from the other two.
 
-We can suppress two method of ```deque``` and use it as ```stack``` or ```queue```, therefore stack and queue both inherit from ```deque```. The functionalities of both ```stack``` and ```queue``` can be written in terms of functionalities of ```deque```.
+We can suppress two method of `deque` and use it as `stack` or `queue`, therefore stack and queue both inherit from `deque`. The functionalities of both `stack` and `queue` can be written in terms of functionalities of `deque`.
 
 ## Modifiers in Java
 
@@ -255,12 +255,12 @@ Typically, instance variables are private and methods used to interact with the 
 
 ```java
 public class Date{
-  
+
   //Instance variables
   private int year;
   private int month;
   private int day;
-  
+
   //Accessors
   public int getYear(){
     return year;
@@ -271,7 +271,7 @@ public class Date{
   public int getDay(){
     return day;
   }
-  
+
   //Mutators
   public void setYear(int year){
     this.year = year;
@@ -295,7 +295,7 @@ private boolean validDate(int date){
 }
 
 //The following can be a possible implementation of method setDay
-pubilc void setDay(int day){
+public void setDay(int day){
   if(validDate(day)){
     this.day = day;
   }else{
@@ -319,14 +319,12 @@ This modifier denotes that values cannot be updated. Let's take the same example
 ```java
 class Math{
   public final PI = 3.14;
-  
+
   public changePI(){
     this.PI = 3.15; //Not allowed
   }
 }
 ```
-
-
 
 **Meaning of final in methods**
 
@@ -354,6 +352,6 @@ The `Object` class provides several methods that can be used by any class. We ca
 
 Example of some methods which are present in the `Object` class are:
 
-- `equals(Object obj)` -  This method is used to compare two objects for equality. We can override this method inside a class in order to provide custom implementation for checking equality between objects of that class. It returns `true` if the objects are equal, and `false` otherwise.
+- `equals(Object obj)` - This method is used to compare two objects for equality. We can override this method inside a class in order to provide custom implementation for checking equality between objects of that class. It returns `true` if the objects are equal, and `false` otherwise.
 - `toString()` - This method returns a string representation of the object which gets printed, when we print the object. We can provide a specialized implementation of this method in a class to print objects of that class in a certain way.
 - `hashCode()` - This method returns the hash code value for the object. It is a unique integer value generated using properties of an object.

@@ -4,8 +4,7 @@
 <span style="display:flex; justify-content: space-between;">
 	<a href="../index.html">Home</a>   <a href="../week-1/summary.html">Week-1</a>    <a href="../week-3/summary.html">Week-3</a>    
 </span> 
-<hr> 
-
+<hr>
 
 # Java - Week 2
 
@@ -51,8 +50,6 @@ Modifiers play an important role in any Java program. A modifier in Java is a ke
    }
    ```
 
-   
-
 2. static - allows us to use the method or field without creating an instance of the class.
 
    ```java
@@ -92,7 +89,7 @@ In the given example, we can see that the function named square takes in a numbe
 
 ## Saving a JAVA Program
 
-There are certain rules we need to follow in order to save a Java program before we can finally run it. The file name needs to be exactly same as the class contained in the file. 
+There are certain rules we need to follow in order to save a Java program before we can finally run it. The file name needs to be exactly same as the class contained in the file.
 
 ```java
 public class myprogram{
@@ -218,7 +215,7 @@ Arithmetic operators are a set of mathematical operations used to perform arithm
 
 - Addition (+)
 - Subtraction (-)
-- Multiplication (*)
+- Multiplication (\*)
 - Division (/)
 - Modulus ( % )
 
@@ -385,7 +382,7 @@ Conditional loops in Java are control structures that allow the program to execu
 
 ### while
 
-A `while` loop in Java is a control flow statement that allows a block of code to be executed repeatedly while a particular condition is true. 
+A `while` loop in Java is a control flow statement that allows a block of code to be executed repeatedly while a particular condition is true.
 
 The condition is evaluated at the beginning of each iteration of the loop. If the condition is true, the code inside the loop is executed. After the code is executed, the condition is evaluated again, and the process continues until the condition becomes false.
 
@@ -493,11 +490,11 @@ To declare a class in Java, you use the "class" keyword followed by the name of 
 
 ```java
 public class Fruits {
-  
+
   	//Instance variables
 	private int weight;
   	private int calories;
-  
+
   	//Methods
 	public void eat(){
 		System.out.println("Fruit finished.");
@@ -529,7 +526,7 @@ Fruits myBanana = new Fruits();
 
 We can define public mutator methods inside a class, which can be used by the objects of that class to modify themselves.
 
-Note: this keyword is used to reference the current object 
+Note: this keyword is used to reference the current object
 
 Example, this is a mutator method which can be defined inside Fruits class in order to modify variables of an object.
 
@@ -628,30 +625,30 @@ Let's see this with the help of an example
 
 ```java
 class Person{
-  
+
   //Instance variables
   String name;
   int age;
   Fruits favouriteFruit;
-  
+
   public Person(String name, int age, Fruits favouriteFruit){
     this.name = name;
     this.age = age;
     this.favouriteFruit = favouriteFruit;
   }
-  
+
   public Person(Person p){
     this.name = p.name;
     this.age = p.age;
     this.favouriteFruit = p.favouriteFruit; //shallow
   }
-  
+
   public changeFruitWeight(int weight){
     this.name = "Ayush";
     this.age = 25;
     favouriteFruit.setWeight(weight);
   }
-  
+
   public void printDetails(){
     System.out.println(name+" "+age);
     System.out.println("Details of favourite fruit:");
@@ -662,7 +659,7 @@ class Person{
 public class MainClass{
   public static void main(String[] args){
     Fruits apple = new Fruits(150, 50); //An apple with 150gm weight and 50gm calories
-    Person person1 = new Person("Shubham", 20 apple);
+    Person person1 = new Person("Shubham", 20, apple);
     //A person with name Shubham, age 20 and favourite fruit as the apple object.
     Person person2 = new Person(person1);
     //Another person with the same properties.
@@ -723,7 +720,7 @@ Similar to input, there are multiple ways by which we can output something in Ja
 ```java
 System.out.print("Hello"); //prints the string to the console.
 System.out.print(" World");
-//Output: 
+//Output:
 //Hello World
 
 System.out.println("Hello"); //println adds a new line after printing the string to the console
@@ -732,4 +729,3 @@ System.out.print("World");
 //Hello
 //World
 ```
-
