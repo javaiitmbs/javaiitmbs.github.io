@@ -249,7 +249,7 @@ copynum = num;
 //copynum now contains the value 100.0 which is a float because we initialised it to a variable of type float.
 ```
 
-1. Explicit conversion is when a data is converted to a different type by the programmer using the cast operator.
+2. Explicit conversion is when a data is converted to a different type by the programmer using the cast operator.
 
 ```java
 double d = 9.99;
